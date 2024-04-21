@@ -13,39 +13,22 @@
 # limitations under the License.
 
 import streamlit as st
-from streamlit.logger import get_logger
 
-LOGGER = get_logger(__name__)
+def find_largest(a, b, c):
+    return max(a, b, c)
 
+def main():
+    st.title("Find the Largest Among Three Numbers")
+    
+    st.write("Enter three numbers below:")
+    
+    num1 = st.number_input("Enter first number", value=0)
+    num2 = st.number_input("Enter second number", value=0)
+    num3 = st.number_input("Enter third number", value=0)
+    
+    if st.button("Find Largest"):
+        largest = find_largest(num1, num2, num3)
+        st.write(f"The largest number is: {largest}")
 
-def run():
-    st.set_page_config(
-        page_title="Hello",
-        page_icon="👋",
-    )
-
-    st.write("# Welcome to Streamlit! 👋")
-
-    st.sidebar.success("Select a demo above.")
-
-    st.markdown(
-        """
-        Streamlit is an open-source app framework built specifically for
-        Machine Learning and Data Science projects.
-        **👈 Select a demo from the sidebar** to see some examples
-        of what Streamlit can do!
-        ### Want to learn more?
-        - Check out [streamlit.io](https://streamlit.io)
-        - Jump into our [documentation](https://docs.streamlit.io)
-        - Ask a question in our [community
-          forums](https://discuss.streamlit.io)
-        ### See more complex demos
-        - Use a neural net to [analyze the Udacity Self-driving Car Image
-          Dataset](https://github.com/streamlit/demo-self-driving)
-        - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
-    """
-    )
-
-
-if __name__ == "__main__":
-    run()
+if name == "main":
+    main()
